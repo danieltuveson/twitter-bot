@@ -1,1 +1,1 @@
-git+https://github.com/tweepy/tweepy.git
+tweepy==3.7.0
