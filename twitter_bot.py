@@ -14,6 +14,7 @@ api = tweepy.API(auth)
 if __name__ == '__main__':
     api.update_status('test post')
     sleep(100)
+    api.update_status('another test post')
     # while True:
     #     api.update_status('The time is now ' + strftime('%H:%M:%S', localtime()) + ' in Los Angeles')
     #     sleep(random.randrange(3, 8, 1) * 60 * 60) # tweets every 3-8 hours
