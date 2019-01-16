@@ -3,4 +3,4 @@
 
 Made using python with tweepy for accessing the twitter api. 
 
-Wanna see the [cat pics?](https://twitter.com/dd_cat_pics)
+Wanna see the [cat pics](https://twitter.com/dd_cat_pics)?
