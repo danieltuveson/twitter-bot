@@ -2,7 +2,6 @@ import tweepy
 import random
 from keys import keys
 from time import localtime, strftime, sleep
-from os import listdir
  
 CONSUMER_KEY = keys['consumer_key'] 
 CONSUMER_SECRET = keys['consumer_secret'] 
@@ -13,8 +12,9 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
 if __name__ == '__main__':
-    photos = listdir('./photos')
-    for photo in photos:
-        api.update_with_media(f'./photos/{photo}')
-        sleep(60 * 24) # Sleeps for one day
-    api.update_status('Welp I\'m out of photos. Hopefully I\'ll have some more soon')
+    for status in tweepy.Cursor(api.user_timeline).items():
+        try:
+            api.destroy_status(status.id)
+            print("Deleted:", status.id)
+        except:
+            print("Failed to delete:", status.id)
