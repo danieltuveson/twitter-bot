@@ -16,5 +16,5 @@ if __name__ == '__main__':
     photos = listdir('./photos')
     for photo in photos:
         api.update_with_media(f'./photos/{photo}')
-        sleep(60 * 24) # Sleeps for one day
+        sleep(60 * 60 * 24) # Sleeps for one day
     api.update_status('Welp I\'m out of photos. Hopefully I\'ll have some more soon')
