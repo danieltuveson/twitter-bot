@@ -4,10 +4,10 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import date, timedelta
 
  
-CONSUMER_KEY = os.environ.get('consumer_key')
-CONSUMER_SECRET = os.environ.get('consumer_secret') 
-ACCESS_KEY = os.environ.get('access_token')
-ACCESS_SECRET = os.environ.get('access_token_secret')
+CONSUMER_KEY = environ.get('consumer_key')
+CONSUMER_SECRET = environ.get('consumer_secret') 
+ACCESS_KEY = environ.get('access_token')
+ACCESS_SECRET = environ.get('access_token_secret')
 AUTH = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 AUTH.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 API = tweepy.API(AUTH)
