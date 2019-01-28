@@ -11,7 +11,7 @@ ACCESS_SECRET = environ.get('access_token_secret')
 AUTH = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 AUTH.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 API = tweepy.API(AUTH)
-sched = BackgroundScheduler()
+sched = BlockingScheduler()
 
 
 def post_status(photo):
